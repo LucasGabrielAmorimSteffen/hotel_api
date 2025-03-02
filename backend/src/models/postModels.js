@@ -60,7 +60,7 @@ const createReviews = async (getAllReviews) => {
     
     const query = 'INSERT INTO avaliacoes(usuario_id, hotel_id, nota, comentario, data_avaliacao) VALUES($1, $2, $3, $4, $5) RETURNING usuario_id, hotel_id, nota, comentario, data_avaliacao';
     const { rows } = await connection.query(query, [usuario_id, hotel_id, nota, comentario, dateUTC]);
-    return {id: rows[0].id};
+    return {id: rows[0].id,nota,comentario};
 }
 
 module.exports = {
