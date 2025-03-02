@@ -18,6 +18,10 @@ router.get('/reviews', getController.getAllReviews);
 // POST ROUTES
 router.post('/users', postmiddleware.RequiredFieldsUser, postController.createUsers);
 router.post('/hotel', postmiddleware.RequiredFieldsHotel, postController.createHotel);
-router.post('/rooms', postmiddleware.RequiredFieldsRooms, postController.createRooms)
+router.post('/rooms', postmiddleware.RequiredFieldsRooms, postController.createRooms);
+router.post('/reservations', postmiddleware.RequiredFieldsReservation, postController.createReservations);
+router.post('/cpayments', postmiddleware.RequiredFieldsCondPayments, postController.createCondPayments);
+router.post('/payments', postmiddleware.RequiredFieldsPayments, postController.createPayments);
+router.post('/reviews', postmiddleware.RequiredFieldsReviews, postController.createReviews);
 
 module.exports = router;
