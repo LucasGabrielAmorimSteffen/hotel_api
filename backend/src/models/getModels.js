@@ -20,6 +20,11 @@ const getAllReservations = async ()=>{
     return reservations.rows;
 };
 
+const getAllCondPayments = async ()=>{
+    const  cpayments     = await connection.query('SELECT * FROM condpagamento')
+    return cpayments.rows;
+};
+
 const getAllPayments = async ()=>{
     const payments   = await connection.query('SELECT * FROM pagamentos');
     return payments.rows;
@@ -28,13 +33,15 @@ const getAllPayments = async ()=>{
 const getAllReviews = async ()=>{
     const reviews   = await connection.query('SELECT * FROM avaliacoes');
     return reviews.rows;
-}
+};
+
 
 module.exports = {
     getAllUsers,
     getAllHotel,
     getAllRooms,
     getAllReservations,
+    getAllCondPayments,
     getAllPayments,
-    getAllReviews
+    getAllReviews,
 }

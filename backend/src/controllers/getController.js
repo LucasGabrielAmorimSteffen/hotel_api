@@ -20,6 +20,11 @@ const getAllReservations = async (request, response)=>{
     return response.status(200).json(reservations)
 };
 
+const getAllCondPayments = async(request, response)=>{
+    const cpayments = await models.getAllCondPayments();
+    return response.status(200).json(cpayments)
+};
+
 const getAllPayments = async (request, response)=>{
     const payments = await models.getAllPayments();
     return response.status(200).json(payments)
@@ -30,11 +35,14 @@ const getAllReviews = async (request, response)=>{
     return response.status(200).json(reviews)
 };
 
+
+
 module.exports = {
     getAllUsers,
     getAllHotel,
     getAllRooms,
     getAllReservations,
+    getAllCondPayments,
     getAllPayments,
     getAllReviews
 }
